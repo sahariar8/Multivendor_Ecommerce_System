@@ -31,11 +31,3 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
-
-
-/*   Admin Routes   */
-Route::get('/admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard')->middleware('auth');
-
-/*   Vendor Routes   */
-Route::get('/vendor/dashboard',[VendorController::class,'index'])->name('vendor.dashboard')->middleware('auth');
- 
