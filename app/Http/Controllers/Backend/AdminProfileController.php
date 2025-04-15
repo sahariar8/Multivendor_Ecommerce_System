@@ -37,6 +37,7 @@ class AdminProfileController extends Controller
         $admin->name = $request->input('name');
         $admin->email = $request->input('email');
         $admin->save();
+        flash()->success('Profile updated successfully.');
 
         return redirect()->route('admin.profile')->with('success', 'Profile updated successfully.');
     }
@@ -52,6 +53,7 @@ class AdminProfileController extends Controller
         $admin = auth()->user();
         $admin->password = bcrypt($request->input('password'));
         $admin->save();
+        toastr()->success('Password updated successfully.');
 
         return redirect()->route('admin.profile')->with('success', 'Password updated successfully.');
     }
