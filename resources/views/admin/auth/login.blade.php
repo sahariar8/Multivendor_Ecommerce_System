@@ -65,7 +65,7 @@
                     </div>
                     <input id="password" type="password" class="form-control" name="password" value="{{ old('password') }}" tabindex="2" required>
                     @if ($errors->has('password'))
-                      <div class="alert alert-danger mt-2">
+                      <div class="text-danger mt-2">
                         <strong>{{ $errors->first('password') }}</strong>
                       </div> 
                     @endif
